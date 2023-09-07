@@ -66,7 +66,33 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.username}>@Michelle</Text>
+      <View style={styles.rankingContainer}>
+        <Text style={{ color: 'white', marginRight: '3%'}}>No. 5 in Selling</Text>
+        <Ionicons name='trending-up' size={25} color='white'/>
+      </View>
+
+      <View style={styles.usernameContainer}>
+        <Text style={styles.username}>@Michelle</Text>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#ef4444',
+            flex: 1,
+            marginLeft: '5%',
+            borderRadius: 20,
+            padding: '2%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+          }}
+        >
+          <Ionicons name='people' size={20} color='white'/>
+          <Text style={{ color: 'white', fontWeight: 'bold', marginLeft: '5%'}}>
+            Community | 21 ppl
+          </Text>
+          {/* <Ionicons name='add-circle' size={20} color='white' style={{ position: 'absolute', right: '5%'}}/> */}
+        </TouchableOpacity>
+      </View>
+      
       <Text style={styles.description}>This is a random description</Text>
       <Text style={styles.tags}>#desctiprion #NothingOverHere</Text>
       <Text style={styles.music}>再见莫妮卡</Text>
@@ -132,8 +158,8 @@ const HomeScreen = () => {
           url: 'https://bkimg.cdn.bcebos.com/pic/8601a18b87d6277f9e2f9244406c0830e924b8995608?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_auto'
         }}
         style={{
-          width: 40,
-          height: 40,
+          width: 45,
+          height: 45,
           position: 'absolute',
           bottom: '45%',
           right: '2.5%',
@@ -143,7 +169,7 @@ const HomeScreen = () => {
           borderColor: 'white',
           // resizeMode: 'fit',
         }}/>
-        <Ionicons
+        {/* <Ionicons
         name='add-circle'
         size={20}
         style={{
@@ -151,7 +177,7 @@ const HomeScreen = () => {
           bottom: '43.5%',
           right: '4.5%',
           color: 'red',
-        }}/>
+        }}/> */}
 
         <TouchableOpacity 
           style={styles.sideTab}
@@ -295,13 +321,28 @@ const HomeScreen = () => {
 
 
 const styles = StyleSheet.create({
+  rankingContainer: {
+    width: '50%',
+    height: '4%',
+    position: 'absolute',
+    bottom: '18%',
+    marginLeft: '3%',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  usernameContainer: {
+    width: '75%',
+    height: '5%',
+    position: 'absolute',
+    bottom: '13%',
+    marginLeft: '3%',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
   username: {
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    marginLeft: '3%',
-    position: 'absolute',
-    bottom: '13%',
   },
   description: {
     color: 'white',
