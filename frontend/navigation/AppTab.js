@@ -20,35 +20,35 @@ const AppTab = () => {
     
             if (route.name === 'Home') {
                 iconName = focused
-                ? 'planet'
-                : 'planet-outline';
+                ? 'home'
+                : 'home-outline';
             } else if (route.name === 'Add') {
                 iconName = focused 
-                ? 'medkit'
-                : 'medkit-outline';
+                ? 'add'
+                : 'add-outline';
                 size = 35;
             } else if (route.name === 'Status') {
                 iconName = focused 
-                ? 'walk'
-                : 'walk-outline';
+                ? 'person'
+                : 'person-outline';
             } else if (route.name === 'Services') {
                 iconName = focused 
-                ? 'apps'
-                : 'apps-outline';
+                ? 'basket'
+                : 'basket-outline';
             } else if (route.name === 'Enquiry') {
                 iconName = focused 
-                ? 'call'
-                : 'call-outline';
+                ? 'chatbox-ellipses'
+                : 'chatbox-ellipses-outline';
             }
     
             // You can return any component that you like here!
             return <View style={{width: 45, alignItems: 'center'}}><Ionicons name={iconName} size={size} color={color} /></View>; // <Text style={{color: color}}>{route.name}</Text>
             },
-            tabBarActiveTintColor: '#86efac',
+            tabBarActiveTintColor: 'white',
             tabBarInactiveTintColor: 'white',
             headerShown: false,
             tabBarStyle: {
-            backgroundColor: '#1f2937',
+            backgroundColor: 'black',
             borderTopColor: 'transparent',
             },
             position: 'absolute',

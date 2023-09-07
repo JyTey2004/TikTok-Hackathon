@@ -12,7 +12,8 @@ const AppNav = () => {
   return (
     <NavigationContainer>
       {
-            isLoggedIn ?<AppTab /> : <AuthStack />
+            // isLoggedIn ?<AppTab /> : <AuthStack />
+            <AppTab />
       }
     </NavigationContainer>
     
