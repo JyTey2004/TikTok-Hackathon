@@ -1,103 +1,73 @@
-import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
+import { View, Text, SafeAreaView, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const ServicesScreen = () => {
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearch = () => {
+    // You can implement your search logic here using the `searchText` state.
+    // For now, let's just log the search text.
+    console.log('Search text:', searchText);
+  };
+
+  // Sample data for content creators (you can replace this with your own data)
+  const contentCreators = [
+    {
+      id: 1,
+      name: 'John Doe',
+      profileImage: 'https://wallpapers.com/images/high/cool-profile-picture-1ecoo30f26bkr14o.webp', // Replace with the actual image path
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      profileImage: 'https://wallpaperaccess.com/full/6295120.jpg', // Replace with the actual image path
+    },
+    // Add more content creators as needed
+  ];
+
   return (
-    <SafeAreaView className='bg-black flex-1 items-center'>
-        <Text style={{ color: '#86efac', fontSize: 24, marginTop: 10, marginLeft: 10}} className='font-bold'>Services</Text>
-        {/* <View style={{ backgroundColor: '#86efac', height: 1, width: '97%', marginTop: 10 }} /> */}
-        <View style={{ height: '40%', width: '87%', marginTop: 10 }}>
-            <View style={{ flexDirection: 'row', width: '100%', height: '50%' }}>
-                <View style={{ height: '100%', justifyContent: 'flex-end', alignItems: 'center'}} className='w-1/3'>
-                    <Image
-                        style={{ width: '50%', height: '50%', borderRadius: 10 }}
-                        source={require('../assets/images/Calendar-bro.png')}
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'black' }}>
+        <View style={{marginHorizontal: '3%'}}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', borderRadius: 10, flex: 1 }}>
+                    <Ionicons name="search" size={20} color="black" style={{ marginLeft: 10 }} />
+                    <TextInput
+                        style={{
+                        flex: 1,
+                        color: 'black',
+                        padding: 10,
+                        }}
+                        placeholder="Search..."
+                        placeholderTextColor="gray"
+                        onChangeText={(text) => setSearchText(text)}
+                        value={searchText}
                     />
-                    <Text style={{ color: '#86efac', fontSize: 16, marginLeft: 10}} className='font-base'>Appointment</Text>                        
+                    <TouchableOpacity style={{ marginRight: '2%' }} onPress={handleSearch}>
+                        <Text style={{ color: 'red', fontSize: 16, fontWeight: 'bold' }}>Search</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={{height: '100%', justifyContent: 'flex-end', alignItems: 'center'}} className='w-1/3'>
-                    <Image
-                        style={{ width: '50%', height: '50%', borderRadius: 10 }}
-                        source={require('../assets/images/Cake-bro.png')}
-                    />
-                    <Text style={{ color: '#86efac', fontSize: 16, marginLeft: 10}} className='font-base'>Nutrition</Text>  
-                </View>
-                <View style={{ height: '100%', justifyContent: 'flex-end', alignItems: 'center'}} className='w-1/3'>
-                    <Image
-                            style={{ width: '50%', height: '50%', borderRadius: 10 }}
-                            source={require('../assets/images/Pharmacist-amico.png')}
-                        />
-                    <Text style={{ color: '#86efac', fontSize: 16, marginLeft: 10}} className='font-base'>Prescription</Text>  
-                </View>
+                <TouchableOpacity>
+                    <Ionicons name="cart-outline" size={30} color="white" style={{ marginLeft: 15 }} />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Ionicons name="menu-outline" size={30} color="white" style={{ marginLeft: 15 }} />
+                </TouchableOpacity>
             </View>
-            <View style={{ flexDirection: 'row', width: '100%', height: '50%' }}>
-                <View style={{ height: '100%', justifyContent: 'flex-end', alignItems: 'center'}} className='w-1/3'>
-                    <Image
-                        style={{ width: '50%', height: '50%', borderRadius: 10 }}
-                        source={require('../assets/images/Rheumatology-bro.png')}
-                    />
-                    <Text style={{ color: '#86efac', fontSize: 16, marginLeft: 10}} className='font-base'>Check-up</Text>                        
-                </View>
-                <View style={{ height: '100%', justifyContent: 'flex-end', alignItems: 'center'}} className='w-1/3'>
-                    <Image
-                        style={{ width: '50%', height: '50%', borderRadius: 10 }}
-                        source={require('../assets/images/Drone-Delivery-bro.png')}
-                    />
-                    <Text style={{ color: '#86efac', fontSize: 16, marginLeft: 10}} className='font-base'>Delivery</Text>                        
-                </View>
-                <View style={{ height: '100%', justifyContent: 'flex-end', alignItems: 'center'}} className='w-1/3'>
-                    <Image
-                        style={{ width: '50%', height: '50%', borderRadius: 10 }}
-                        source={require('../assets/images/Designer-girl-bro.png')}
-                    />
-                    <Text style={{ color: '#86efac', fontSize: 16, marginLeft: 10}} className='font-base'>Free Reports</Text>                        
-                </View>
-            </View>
-        </View>
 
-        <View style={{ backgroundColor: '#86efac', height: 1, width: '92%', marginTop: 30 }} />
-
-        <View style={{ height: '49%', width: '97%', backgroundColor: 'black', borderRadius: 20, padding: 20, paddingTop: 10}}>
-            <View style={{ flexDirection: 'row', width: '100%', height: '65%', backgroundColor: '#86efac', borderRadius: 20, padding: 7 }}>
-                {/* <View style={{ height: '100%', padding: 10, borderRadius: 15}} className='w-1/2 bg-gray-800 flex-row'> */}
-                    <Image
-                        style={{ width: '40%', height: '100%', borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}
-                        source={{uri: 'https://img.freepik.com/free-photo/doctors-working_23-2147822735.jpg?size=626&ext=jpg&ga=GA1.1.1004410598.1686174404&semt=ais'}}
-                    />
-                {/* </View> */}
-                <View style={{ height: '100%', padding: 15, borderTopRightRadius: 10, borderBottomRightRadius: 10}} className='w-3/5 bg-gray-800'>
-                    <Text style={{ color: 'white', fontSize: 20, marginLeft: 5}} className='font-bold'>Trainee Doctor Program!</Text>
-                    <Text style={{ color: 'white', fontSize: 16,marginTop: 10, marginLeft: 5}} className='font-base'>Feel free to get free sessions with our trainee doctors!</Text>
-                    <View className='flex-1 items-end justify-end'>
-                       <TouchableOpacity style={{ backgroundColor: '#86efac', width: '50%', height: '40%', borderRadius: 10, marginTop: 10, alignItems: 'center', flexDirection: 'row' }}>
-                            <Text style={{ color: 'black', fontSize: 16, marginLeft: 5, flex: 1, textAlign: 'center' }} className='font-bold'>Learn More</Text>
-                            <Ionicons name="arrow-forward-circle" size={24} color="black" style={{ marginRight: 5}} />
-                        </TouchableOpacity> 
+            {/* Content Creators */}
+            <ScrollView style={{ height: '15%', marginTop: '3%'}} horizontal>
+                {contentCreators.map((creator) => (
+                    <View key={creator.id} style={{ alignItems: 'center', flex: 1}}>
+                        <Image source={{uri: creator.profileImage}} style={{width: 100, height: 100, borderRadius: '30%', borderColor: '#ef4444', borderWidth: '1%' }} />
+                        <Text style={{ marginLeft: 10, fontWeight: 'bold', color: 'white' }} className='text-sm'>@{creator.name}</Text>
                     </View>
-                </View>
-            </View>
-            <View style={{ flexDirection: 'row', width: '100%', height: '35%', backgroundColor: '#86efac', borderRadius: 20, padding: 7, marginTop: 10 }}>
-                <Image
-                    style={{ width: '40%', height: '100%', borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}
-                    source={{uri: 'https://img.freepik.com/free-photo/top-view-showing-hands-eating-healthy-lunch-with-bulgur-meat-fresh-vegetables-fruit-wooden-table-fitness-healthy-lifestyle-concept-lunchbox-top-view_2829-6077.jpg?size=626&ext=jpg&ga=GA1.1.1004410598.1686174404&semt=ais'}}
-                />
-                <View style={{ height: '100%', padding: 15, borderTopRightRadius: 10, borderBottomRightRadius: 10, justifyContent: 'center'}} className='w-3/5 bg-gray-800'>
-                    <Text style={{ color: 'white', fontSize: 20, marginLeft: 5}} className='font-bold'>Smart Nutrition Planner!</Text>
-                    <View className='flex-1 items-end justify-end'>
-                        <TouchableOpacity style={{ backgroundColor: '#86efac', width: '50%', height: '70%', borderRadius: 10, marginTop: 10, alignItems: 'center', flexDirection: 'row' }}>
-                            <Text style={{ color: 'black', fontSize: 16, marginLeft: 5, flex: 1, textAlign: 'center' }} className='font-bold'>Try Now</Text>
-                            <Ionicons name="arrow-forward-circle" size={24} color="black" style={{ marginRight: 5}} />
-                        </TouchableOpacity> 
-                    </View>
-                    
-                </View>
-            </View>
+                ))}
+            </ScrollView>
         </View>
-        
-
+      
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default ServicesScreen
+export default ServicesScreen;

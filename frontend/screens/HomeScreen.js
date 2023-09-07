@@ -19,6 +19,9 @@ const HomeScreen = () => {
 
   const toggleExpansion = () => {
     setIsExpanded(!isExpanded);
+    if (isReviewExpanded) {
+      setIsReviewExpanded(false);
+    }
   };
 
   const toggleReviewExpansion = () => {
