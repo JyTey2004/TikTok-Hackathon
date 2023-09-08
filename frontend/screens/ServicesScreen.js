@@ -103,8 +103,8 @@ const ServicesScreen = () => {
                 </TouchableOpacity>
             </View>
         </View>
-
-                    {/* Content Creators */}
+        
+        {/* Content Creators */}
         <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', marginTop: '3%', marginHorizontal: '3%' }}>Top Creators</Text>
         <ScrollView style={{ height: '30%', marginTop: '3%', marginHorizontal: '3%' }} horizontal>
             {contentCreators.map((creator) => (
@@ -125,14 +125,14 @@ const ServicesScreen = () => {
                       <Text style={{ marginLeft: 10, fontWeight: 'bold', color: 'white', marginTop: '2%' }} className='text-sm'>{pair.item1.brand}</Text>
                       <Text style={{ marginLeft: 10, fontWeight: 'bold', color: 'white' }} className='text-sm'>{pair.item1.name}</Text>
                       <Text style={{ marginLeft: 10, fontWeight: 'bold', color: '#ef4444' }} className='text-sm'>${pair.item1.price}.00</Text>
-                      <Text style={{ marginLeft: 10, fontWeight: 'base', color: 'white' }} className='text-sm'>{pair.item1.numberSold} sold</Text>
+                      <Text style={{ marginLeft: 10, fontWeight: 'normal', color: 'white' }} className='text-sm'>{pair.item1.numberSold} sold</Text>
                     </View>
                     <View style={{ flex: 1, padding: 3, marginLeft: '2%'}}>
                       <Image source={{uri: pair.item2.image}} style={{width: '100%', height: 200, borderRadius: 30 }} />
                       <Text style={{ marginLeft: 10, fontWeight: 'bold', color: 'white', marginTop: '2%'  }} className='text-sm'>{pair.item2.brand}</Text>
                       <Text style={{ marginLeft: 10, fontWeight: 'bold', color: 'white' }} className='text-sm'>{pair.item2.name}</Text>
                       <Text style={{ marginLeft: 10, fontWeight: 'bold', color: '#ef4444' }} className='text-sm'>${pair.item2.price}.00</Text>
-                      <Text style={{ marginLeft: 10, fontWeight: 'base', color: 'white' }} className='text-sm'>{pair.item2.numberSold} sold</Text>
+                      <Text style={{ marginLeft: 10, fontWeight: 'normal', color: 'white' }} className='text-sm'>{pair.item2.numberSold} sold</Text>
                     </View>
                   </View>
                 ))}

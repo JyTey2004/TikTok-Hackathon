@@ -84,7 +84,7 @@ const HomeScreen = () => {
             alignItems: 'center',
             flexDirection: 'row',
           }}
-        >
+          onClick={() => navigation.navigate('Enquiry')}>
           <Ionicons name='people' size={20} color='white'/>
           <Text style={{ color: 'white', fontWeight: 'bold', marginLeft: '5%'}}>
             Community | 21 ppl
