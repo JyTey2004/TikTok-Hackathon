@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { Divider } from '@react-native-material/core';
 
-const HealthInfoScreen = () => {
+const CreateScreen = () => {
   return (
     <SafeAreaView className='flex-1 bg-black items-center justify-center'>
         
@@ -12,4 +12,4 @@ const HealthInfoScreen = () => {
   )
 }
 
-export default HealthInfoScreen
+export default CreateScreen

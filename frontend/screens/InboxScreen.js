@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 
-const HealthEnquiryScreen = () => {
+const InboxScreen = () => {
   const contentCreators = [
     {
       id: 1,
@@ -142,4 +142,4 @@ const HealthEnquiryScreen = () => {
   )
 }
 
-export default HealthEnquiryScreen
+export default InboxScreen

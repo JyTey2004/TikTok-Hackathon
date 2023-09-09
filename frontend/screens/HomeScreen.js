@@ -31,7 +31,7 @@ const HomeScreen = () => {
   const item ={
     brand: 'Sony',
     name: 'WH1000XM-4',
-    price: '$300',
+    price: 300,
     rating: '96',
     image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c29ueSUyMGhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60',
   }
@@ -50,6 +50,13 @@ const HomeScreen = () => {
       review: 'I love it, it is so good.',
     }
   ]
+
+  const creator = {
+    name: 'Michelle',
+    image: 'https://www.dexerto.com/cdn-cgi/image/width=1080,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2021/09/14/Rozy-ai-influencr-1024x576.jpg',
+    discount: '30%',
+  }
+
   return (
     <SafeAreaView className='flex-1 bg-black'>
       <View className='flex-row items-center justify-center'>
@@ -223,7 +230,7 @@ const HomeScreen = () => {
               <View style={{ height: 1, width: "100%", backgroundColor: '#909090', marginVertical: '2%'}}></View>
               <View className="flex-row items-center justify-between">
                 <Text className="text-sm font-semibold ">Price</Text>
-                <Text className="text-sm font-semibold ">{item.price}</Text>
+                <Text className="text-sm font-semibold ">${item.price}</Text>
               </View>
               <View className="flex-row items-center justify-between">
                 <Text className="text-sm font-semibold ">Rating</Text>
@@ -236,7 +243,7 @@ const HomeScreen = () => {
                   flexDirection: 'row',
                   height: '20%',
                 }}
-                // onPress={() => navigation.navigate('')}
+                onPress={() => navigation.navigate('CheckoutScreen', { item : item, creator: creator })}
               >
                 <Text className="text-xs font-semibold text-white ml-2">Buy Now</Text>
                 <Ionicons name='chevron-forward' size={20} color='white' style={{ position: 'absolute', right: '5%'}}/>

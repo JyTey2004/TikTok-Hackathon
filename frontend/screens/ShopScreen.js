@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, SafeAreaView, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const ServicesScreen = () => {
+const ShopScreen = () => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
@@ -142,4 +142,4 @@ const ServicesScreen = () => {
   );
 };
 
-export default ServicesScreen;
+export default ShopScreen;

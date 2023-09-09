@@ -5,10 +5,10 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import AppStack from './AppStack';
-import HealthInfoScreen from '../screens/HealthInfoScreen';
-import UserHealthScreen from '../screens/UserHealthScreen';
-import ServicesScreen from '../screens/ServicesScreen';
-import HealthEnquiryScreen from '../screens/HealthEnquiryScreen';
+import CreateScreen from '../screens/CreateScreen';
+import UserScreen from '../screens/UserScreen';
+import ShopScreen from '../screens/ShopScreen';
+import InboxScreen from '../screens/InboxScreen';
 
 const AppTab = () => {
     const AppTabNav = createBottomTabNavigator();
@@ -22,20 +22,20 @@ const AppTab = () => {
                 iconName = focused
                 ? 'home'
                 : 'home-outline';
-            } else if (route.name === 'Add') {
+            } else if (route.name === 'Create') {
                 iconName = focused 
                 ? 'add'
                 : 'add-outline';
                 size = 35;
-            } else if (route.name === 'Status') {
+            } else if (route.name === 'User') {
                 iconName = focused 
                 ? 'person'
                 : 'person-outline';
-            } else if (route.name === 'Services') {
+            } else if (route.name === 'Shop') {
                 iconName = focused 
                 ? 'basket'
                 : 'basket-outline';
-            } else if (route.name === 'Enquiry') {
+            } else if (route.name === 'Inbox') {
                 iconName = focused 
                 ? 'chatbox-ellipses'
                 : 'chatbox-ellipses-outline';
@@ -65,6 +65,8 @@ const AppTab = () => {
                 return { display: "none" }
                 }  else if (routeName === 'NotificationScreen') {
                 return { display: "none" }
+                } else if (routeName === 'CheckoutScreen') {
+                return { display: "none" }
                 } return {
                 backgroundColor: '#1f2937',
                 borderTopColor: 'transparent',
@@ -72,10 +74,10 @@ const AppTab = () => {
             })(route),
             })}
         />
-        <AppTabNav.Screen name="Services" component={ServicesScreen} />
-        <AppTabNav.Screen name="Add" component={HealthInfoScreen} />
-        <AppTabNav.Screen name="Enquiry" component={HealthEnquiryScreen} />
-        <AppTabNav.Screen name="Status" component={UserHealthScreen} />
+        <AppTabNav.Screen name="Shop" component={ShopScreen} />
+        <AppTabNav.Screen name="Create" component={CreateScreen} />
+        <AppTabNav.Screen name="Inbox" component={InboxScreen} />
+        <AppTabNav.Screen name="User" component={UserScreen} />
         
     </AppTabNav.Navigator>
   )
